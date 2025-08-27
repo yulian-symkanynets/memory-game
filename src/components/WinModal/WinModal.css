@@ -1,0 +1,40 @@
+.win-modal {
+    position: fixed;
+    inset: 0;
+    
+    z-index: 9999;
+    /* stays on top */
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(3px);
+    display: grid;
+    place-items: center;
+    /* width: 300px;
+    height: 200px; */
+}
+.win-button{
+    width: 100px;
+    height: 20px;
+}
+
+.win-text{
+    display: flex;
+    width: 300px;
+    height: 200px;
+    background-color: blueviolet;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    animation: jump 1s cubic-bezier(.28,.84,.42,1) infinite;
+    will-change: transform;
+}
+
+@keyframes jump {
+  0%   { transform: translateY(0); }
+  20%  { transform: translateY(0); }       /* brief pause before jump */
+  40%  { transform: translateY(-18px); }   /* peak */
+  60%  { transform: translateY(0); }       /* land */
+  75%  { transform: translateY(-6px); }    /* tiny rebound */
+  90%  { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
