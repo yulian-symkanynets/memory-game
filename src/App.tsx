@@ -9,13 +9,13 @@ import WinModal from './components/WinModal/WinModal';
 
 
 function App() {
-  const [moves, setMoves] = useState(0);
+  const [, setMoves] = useState(0);
   const [deck, setDeck] = useState<CardInterface[]>([]);
   const [firstIndex, setFirstIndex] = useState(-1);
   const [stats, setStats] = useState<Stats>({ moves: 0, time: 0, bestTime: Number(localStorage.getItem('bestTime')) })
   const [seconds, setSeconds] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
-  const [isWon, setIsWon] = useState(false);
+  const [isWon, setIsWon] = useState(true);
   const [isLocked, setIsLocked] = useState(false);
 
   // const cardTest: CardInterface ={
@@ -38,7 +38,7 @@ function App() {
 
   useEffect(() => {
     if (!isRunning) return;
-    
+
     const id = setInterval(() => {
       setSeconds(s => s + 1);
     }, 1000);
@@ -48,24 +48,24 @@ function App() {
 
   useEffect(() => {
     setStats(s => ({ ...s, time: seconds }));
-    
+
   }, [seconds]);
 
-useEffect(() => {
-  if (!deck.length) return;
-  const won = deck.every(c => c.matched);
-  if (won) {
-    setIsWon(true);
-    if(localStorage.getItem('bestTime') === null || Number(localStorage.getItem('bestTime')) > stats.time)
-      localStorage.setItem('bestTime', stats.time.toString())
+  useEffect(() => {
+    if (!deck.length) return;
+    const won = deck.every(c => c.matched);
+    if (won) {
+      setIsWon(true);
+      if (localStorage.getItem('bestTime') === null || Number(localStorage.getItem('bestTime')) > stats.time)
+        localStorage.setItem('bestTime', stats.time.toString())
 
-    setIsRunning(false); // stop stopwatch
-  }
-}, [deck]);
+      setIsRunning(false); // stop stopwatch
+    }
+  }, [deck]);
 
   const flipCard = (index: number) => {
     setIsRunning(true);
-    
+
     if (deck[index].matched || index === firstIndex || isLocked)
       return;
 
@@ -76,7 +76,7 @@ useEffect(() => {
     }
     setStats(newStats);
     const newDeck = deck.map((c, i) =>
-      i === index ? { ...c, flipped: !c.flipped } : c
+      i === index ? { ...c, flipped: true } : c
     );
     setDeck(newDeck);
 
@@ -97,7 +97,7 @@ useEffect(() => {
         );
         setIsLocked(false);
         setFirstIndex(-1);
-        
+
       } else {
         setFirstIndex(-1);
         setTimeout(() => {
@@ -109,11 +109,11 @@ useEffect(() => {
           setFirstIndex(-1);
           setIsLocked(false);
         }, 700);
-        
+
       }
-      
+
     }
-      
+
   }
 
   const restart = () => {
@@ -124,14 +124,14 @@ useEffect(() => {
     setFirstIndex(-1);
     setMoves(0);
     setSeconds(0);
-    setStats({moves: 0, time: 0, bestTime: Number(localStorage.getItem('bestTime'))});
+    setStats({ moves: 0, time: 0, bestTime: Number(localStorage.getItem('bestTime')) });
   }
 
 
 
   return (
     <div className='main-container'>
-      <h1>Memory Game</h1>
+      <h1 className='main-text'>Memory Game</h1>
       <Hub stats={stats} />
       <div className='playfield'>
         {deck.map((card, index) => (
@@ -144,7 +144,7 @@ useEffect(() => {
         ))}
       </div>
       <div className='restart-button' onClick={restart}>
-          Restart
+        Restart
       </div>
       {isWon ? <WinModal restart={restart} /> : null}
     </div>

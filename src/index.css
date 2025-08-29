@@ -2,10 +2,16 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+
+  --backgrounf-color: #ecf6ff;
+  --card-color: #b6ddef;
+  --button-color: #cde3ef;
+  --text-color: #22272a;
+
+  background-color: var(--backgrounf-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,10 +31,12 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100%;
+  
 }
+
+
 
 
 

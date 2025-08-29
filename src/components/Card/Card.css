@@ -1,43 +1,51 @@
-.card{
-    display: flex;
+.card {
     width: 100px;
     height: 100px;
-    background-color: #541212;
+    perspective: 1200px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform .6s ease;
     border-radius: 20px;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
 }
 
-
-.card-front{
-    display: flex;
-   
-}
-
-.card-back{
-
-    display: none;
-}
-
-.card.flipped .card-front{
-    display: none;
-}
-
-.card.flipped .card-back{
-    display: flex;
-    background-color: brown;
-    width: 100px;
-    height: 100px;
-    border-radius: 20px;
-    align-items: center;
-    justify-content: center;
-    
+.card.flipped .card-inner {
     transform: rotateY(180deg);
 }
 
+.card-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
 
-.card.flipped .card-back.matched{
-    background-color: black;
-    box-shadow: 10px 10px rgb(10, 163, 214);
+/* front faces you initially */
+.card-front {
+    background: var(--card-color);
+}
+
+/* back starts turned around */
+.card-back {
+    background: brown;
+    transform: rotateY(180deg);
+}
+
+.card-back.matched {
+  background: rgb(39, 84, 33);
+
+  /* Multiple shadows for a gradient glow effect */
+  box-shadow: 
+    0 0 10px rgba(10, 163, 214, 0.6),   /* bright inner glow */
+    0 0 20px rgba(10, 163, 214, 0.4),   /* softer middle glow */
+    0 0 40px rgba(10, 163, 214, 0.2);   /* very soft outer glow */
 }

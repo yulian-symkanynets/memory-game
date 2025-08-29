@@ -11,10 +11,19 @@
     /* width: 300px;
     height: 200px; */
 }
+
 .win-button{
-    width: 100px;
-    height: 20px;
+    width: 200px;
+    height: 40px;
+    border-radius: 80px;
+    border-width: 0px;
+    background-color: brown;
 }
+.win-button:hover{
+    background-color: rgb(95, 23, 23);
+}
+
+
 
 .win-text{
     display: flex;
@@ -27,6 +36,10 @@
     border-radius: 20px;
     animation: jump 1s cubic-bezier(.28,.84,.42,1) infinite;
     will-change: transform;
+}
+
+.win-text:hover{
+    animation: none;
 }
 
 @keyframes jump {
