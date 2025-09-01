@@ -131,7 +131,9 @@ function App() {
 
   return (
     <div className='main-container'>
-      <h1 className='main-text'>Memory Game</h1>
+      <div className='main-header'>
+        <h1 className='main-text'>Memory Game</h1>
+      </div>
       <Hub stats={stats} />
       <div className='playfield'>
         {deck.map((card, index) => (

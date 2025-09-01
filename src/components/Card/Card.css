@@ -36,12 +36,13 @@
 
 /* back starts turned around */
 .card-back {
-    background: brown;
+    background: var(--card-flipped-color);
     transform: rotateY(180deg);
 }
 
 .card-back.matched {
-  background: rgb(39, 84, 33);
+transition-delay: 0.1s;
+  background: rgb(89, 122, 84);
 
   /* Multiple shadows for a gradient glow effect */
   box-shadow: 

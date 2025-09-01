@@ -31,7 +31,7 @@ h1 {
   color: var(--text-color);
   border-radius: 14px;
 
-  background: #cde3ef;
+  background: var(--button-color);
   border: none;
   cursor: pointer;
   box-shadow: 0 10px 28px rgba(34, 211, 238, .22);

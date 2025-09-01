@@ -12,11 +12,15 @@
     width: 100px;
     height: 80px;
     border-radius: 10px;
-    border-color: rgb(255, 255, 255);
-    border-style: solid;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: var(--text-color);
-    background-color: #f9fdff;
+    background-color: var(--button-color);
+}
+.hud{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

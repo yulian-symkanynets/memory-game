@@ -2,22 +2,37 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
 
-  --backgrounf-color: #ecf6ff;
-  --card-color: #b6ddef;
-  --button-color: #cde3ef;
-  --text-color: #22272a;
+  /* Default theme = dark */
+  --background-color: #22272a;
+  --card-color: #0d0d0d;
+  --card-flipped-color: #0d0d0d(28, 69, 88);
+  --button-color: #0d0d0d;
+  --text-color: #ffffff;
 
-  background-color: var(--backgrounf-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Smooth theme transitions */
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
+
+/* 🌞 Light theme */
+:root[data-theme="light"] {
+  --background-color: #ecf6ff;
+  --card-color: #b6ddef;
+  --card-flipped-color: #70b5d4;
+  --button-color: #cde3ef;
+  --text-color: #22272a;
+}
+
+/* 🌙 Dark theme */
+
 
 a {
   font-weight: 500;
