@@ -1,7 +1,7 @@
 import './Hub.css'
 import "../../utils/stopwatch"
 import { timeFormat } from '../../utils/stopwatch'
-import ThemeToggle from '../ThemeToggle/TheneToggle'
+import ThemeToggle from '../ThemeToggle/ThemeToggle'
 export type Stats = {
     moves: number
     time: number

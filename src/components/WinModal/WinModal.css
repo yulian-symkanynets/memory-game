@@ -8,8 +8,7 @@
     backdrop-filter: blur(3px);
     display: grid;
     place-items: center;
-    /* width: 300px;
-    height: 200px; */
+    
 }
 
 .win-button{
@@ -17,10 +16,11 @@
     height: 40px;
     border-radius: 80px;
     border-width: 0px;
-    background-color: brown;
+    background-color: var(--button-color);
+   
 }
 .win-button:hover{
-    background-color: rgb(95, 23, 23);
+    background-color: var(--card-color);
 }
 
 
@@ -29,7 +29,7 @@
     display: flex;
     width: 300px;
     height: 200px;
-    background-color: blueviolet;
+    background-color: var(--background-color);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -50,4 +50,8 @@
   75%  { transform: translateY(-6px); }    /* tiny rebound */
   90%  { transform: translateY(0); }
   100% { transform: translateY(0); }
+}
+h1{
+    font-size: 40px;
+    /* font-family: 'Rubik Mono One'; */
 }

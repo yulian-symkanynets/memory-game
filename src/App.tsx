@@ -148,7 +148,7 @@ function App() {
       <div className='restart-button' onClick={restart}>
         Restart
       </div>
-      {isWon ? <WinModal restart={restart} /> : null}
+      {isWon ? <WinModal restart={restart} stats={stats} /> : null}
     </div>
 
   )

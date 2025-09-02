@@ -4,7 +4,7 @@ import "./ThemeToggle.css";
 type Theme = "light" | "dark";
 
 function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("light");
 
   // apply theme to <html> + localStorage
   useEffect(() => {
@@ -24,7 +24,7 @@ function ThemeToggle() {
         className="theme-toggle"
         title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
       >
-        {theme === "light" ? "🌙" : "☀️"}
+        {theme === "light" ? "☀️" : "🌙"}
       </button>
     </div>
   );

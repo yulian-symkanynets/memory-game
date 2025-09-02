@@ -6,10 +6,10 @@
   /* Default theme = dark */
   --background-color: #22272a;
   --card-color: #0d0d0d;
-  --card-flipped-color: #0d0d0d(28, 69, 88);
+  --card-flipped-color: #1d3747;
   --button-color: #0d0d0d;
   --text-color: #ffffff;
-  --toggle-button-color: #70b5d4;
+  --toggle-button-color: #22272a;
 
   background-color: var(--background-color);
   color: var(--text-color);
@@ -30,7 +30,7 @@
   --card-flipped-color: #70b5d4;
   --button-color: #cde3ef;
   --text-color: #22272a;
-  --toggle-button-color: #0d0d0d;
+  --toggle-button-color: #70b5d4;
 }
 
 /* 🌙 Dark theme */
