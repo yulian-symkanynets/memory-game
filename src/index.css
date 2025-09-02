@@ -9,6 +9,7 @@
   --card-flipped-color: #0d0d0d(28, 69, 88);
   --button-color: #0d0d0d;
   --text-color: #ffffff;
+  --toggle-button-color: #70b5d4;
 
   background-color: var(--background-color);
   color: var(--text-color);
@@ -29,6 +30,7 @@
   --card-flipped-color: #70b5d4;
   --button-color: #cde3ef;
   --text-color: #22272a;
+  --toggle-button-color: #0d0d0d;
 }
 
 /* 🌙 Dark theme */
