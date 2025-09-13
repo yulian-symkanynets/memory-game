@@ -15,7 +15,7 @@ function App() {
   const [stats, setStats] = useState<Stats>({ moves: 0, time: 0, bestTime: Number(localStorage.getItem('bestTime')) })
   const [seconds, setSeconds] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
-  const [isWon, setIsWon] = useState(true);
+  const [isWon, setIsWon] = useState(false);
   const [isLocked, setIsLocked] = useState(false);
 
   // const cardTest: CardInterface ={
