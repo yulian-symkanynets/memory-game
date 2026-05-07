@@ -1,6 +1,7 @@
 # Memory Game
 
 A simple and fun memory matching game built with React.
+Game is avaliable on [Memory game](https://memory-game-ten-wine.vercel.app/)
 
 ## Features
 
